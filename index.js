@@ -112,6 +112,12 @@ client.connect(err => {
                 res.send(documents)
             })
     })
+    app.get('/allOrders', (req, res) => {
+        orderCollection.find({})
+            .toArray((err, documents) => {
+                res.send(documents)
+            })
+    })
 
     app.post('/serviceId', (req, res) => {
         console.log(req.body)
